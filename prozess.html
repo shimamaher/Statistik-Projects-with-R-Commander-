@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.7">
+<title></title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
+li li { font-size: .95em; }
+ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
+*, :before, :after { box-sizing: border-box; }
+a { color: steelblue; }
+pre, img { max-width: 100%; }
+pre { white-space: pre-wrap; word-break: break-word; }
+pre code { display: block; padding: 1em; overflow-x: auto; }
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre, th) > code, code[class], div > .caption { background: #f8f8f8; }
+pre > code:is(:not([class]), .language-plain, .language-none, .plain), .box, .figure, .table { background: inherit; border: 1px solid #eee; }
+pre > code {
+  &.message { border-color: #9eeaf9; }
+  &.warning { background: #fff3cd; border-color: #fff3cd; }
+  &.error { background: #f8d7da; border-color: #f8d7da; }
+}
+.fenced-chunk { border-left: 1px solid #666; }
+.code-fence {
+  opacity: .4;
+  border: 1px dashed #666;
+  border-left: 2px solid;
+  &:hover { opacity: inherit; }
+}
+.box, .figure, .table, table { margin: 1em auto; }
+div > .caption { padding: 1px 1em; }
+.figure { p:has(img, svg), pre:has(svg) { text-align: center; } }
+.flex-col { display: flex; justify-content: space-between; }
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+  thead th { border-bottom: 1px solid #ddd; }
+  &:not(.datatable-table) {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+}
+blockquote {
+  color: #666;
+  margin: 0;
+  padding: 1px 1em;
+  border-left: .5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC {
+  a { text-decoration: none; }
+  ul { list-style: none; padding-left: 1em; }
+  & > ul { padding: 0; }
+  ul ul { border-left: 1px solid lightsteelblue; }
+}
+.body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.main-number::after { content: "."; }
+span[class^="ref-number-"] { font-weight: bold; }
+.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
+.cross-ref-chp::before { content: "Chapter "; }
+.cross-ref-sec::before { content: "Section "; }
+.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
+.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
+.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
+.abstract, #refs {
+  &::before { display: block; margin: 1em auto; font-weight: bold; }
+}
+.abstract::before { content: "Abstract"; text-align: center; }
+#refs::before { content: "Bibliography"; font-size: 1.5em; }
+.ref-paren-open::before { content: "("; }
+.ref-paren-close::after { content: ")"; }
+.ref-semicolon::after { content: "; "; }
+.ref-and::after { content: " and "; }
+.ref-et-al::after { content: " et al."; font-style: italic; }
+.footnote-ref a {
+  &::before { content: "["; }
+  &::after { content: "]"; }
+}
+section.footnotes {
+  margin-top: 2em;
+  &::before { content: ""; display: block; max-width: 20em; }
+}
+.fade {
+  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
+  opacity: 0.6;
+}
+
+@media print {
+  body { max-width: 100%; }
+  tr, img { break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.14/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+<div class="frontmatter">
+</div>
+<div class="body">
+<div id="TOC">
+<ul>
+<li><a href="#chp:prozessvereinfachung">Prozessvereinfachung</a>
+<ul>
+<li><a href="#sec:alfa">alfa</a></li>
+<li><a href="#sec:2025-08-20">2025-08-20</a></li>
+<li><a href="#sec:zusammenfassungen-f-r-numerische-variablen-dataset">Zusammenfassungen für numerische Variablen: Dataset</a></li>
+<li><a href="#sec:boxplot-qualit-t">Boxplot: ~ Qualität</a></li>
+<li><a href="#sec:quantile-comparison-plot-qualit-t">Quantile-Comparison Plot: Qualität</a></li>
+<li><a href="#sec:bartlett-s-test-qualit-t-dauerfeuchtetemperatur">Bartlett’s Test: Qualität ~ Dauer<em>Feuchte</em>Temperatur</a></li>
+<li><a href="#sec:bedingungen-sind-alle-notwendigen-voraussetzungenf-r-die-anova-erf-llt">bedingungen sind alle notwendigen voraussetzungenfür die ANOVA erfüllt</a>
+<ul>
+<li><a href="#sec:lineares-regressionsmodell-anovamodel-1-qualit-t-dauerfeuchtetemperatur">Lineares Regressionsmodell: AnovaModel.1: Qualität ~ Dauer<em>Feuchte</em>Temperatur</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- R Commander Markdown Template -->
+<h1 id="chp:prozessvereinfachung">Prozessvereinfachung</h1>
+<h3 id="sec:alfa">alfa</h3>
+<h3 id="sec:2025-08-20">2025-08-20</h3>
+<pre><code class="language-r">&gt; Dataset &lt;- readXL(&quot;C:/Users/alfa/Desktop/project/Daten_KW34.xlsx&quot;, 
++   rownames=FALSE, header=TRUE, na=&quot;&quot;, sheet=&quot;4_Prozessvereinfachung&quot;, 
++   stringsAsFactors=TRUE)
+</code></pre>
+<p>Hat die Dauer einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<p>Hat die Feuchte einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<p>Hat die temperatur einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<hr />
+<p>Hat die Dauer und Feuchte einen Einfluss auf die Qualität?</p>
+<p>Hat die Dauer und temperatur einen Einfluss auf die Qualität?</p>
+<p>Hat die Feuchte einen temperatur auf die Qualität?</p>
+<hr />
+<p>Haben Dauer und Feuchte und temperatur im Zusammenspiel einen
+Einfluss auf die Qualität? (Wechselwirkungseffekt)</p>
+<hr />
+<p>——///////</p>
+<p>Nun kommen Zweifel auf, ob tatsächlich alle Faktoren im
+Prozess wichtig sind.</p>
+<p>H0 : Die Mittelwerte der einzelnen Gruppen unterscheiden
+sich nicht</p>
+<p>H1 : Es gibt mindestens einen Unterschied im Mittelwert bei
+einer Gruppe</p>
+<p>(zur Alternativhypothese===&gt;&gt;&gt; das es signifikante Unterschiede gibt)</p>
+<p>––––//////////</p>
+<pre><code class="language-r">&gt; library(abind, pos=17)
+</code></pre>
+<pre><code class="language-r">&gt; library(e1071, pos=18)
+</code></pre>
+<h3 id="sec:zusammenfassungen-f-r-numerische-variablen-dataset">Zusammenfassungen für numerische Variablen: Dataset</h3>
+<pre><code class="language-r">&gt; numSummary(Dataset[,&quot;Qualität&quot;, drop=FALSE], statistics=c(&quot;mean&quot;, &quot;sd&quot;, &quot;IQR&quot;, &quot;quantiles&quot;, &quot;skewness&quot;, &quot;kurtosis&quot;), 
++   quantiles=c(0,.25,.5,.75,1), type=&quot;2&quot;)
+</code></pre>
+<pre><code>     mean       sd     IQR   skewness   kurtosis    0%   25%   50%     75%  100%   n
+ 82.54904 7.455905 11.1975 0.09519957 -0.5958413 62.53 76.83 82.68 88.0275 99.37 240
+</code></pre>
+<p>Die Daten sind annähernd normalverteilt:</p>
+<p>da Mittelwert und Median sehr nahe beieinanderliegen und nahezu gleich sind.</p>
+<p>Die Schiefe ist nahe null, daher ist keine Rechts- oder Linksschiefe erkennbar.</p>
+<p>Die Kurtosis ist leicht negativ, das bedeutet,
+die Verteilung ist etwas flacher als die Normalverteilung, aber dennoch akzeptabel.</p>
+<p>Daher wird die Nullhypothese der Normalverteilung der Daten akzeptiert,
+und damit ist die Grundvoraussetzung für die Anwendung der ANOVA erfüllt.</p>
+<h3 id="sec:boxplot-qualit-t">Boxplot: ~ Qualität</h3>
+<pre><code class="language-r">&gt; Boxplot( ~ Qualität, data=Dataset, id=list(method=&quot;y&quot;))
+</code></pre>
+<div class="figure">
+<img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-6" width="750" />
+<p class="caption">plot of chunk unnamed-chunk-6</p>
+</div>
+<p>die horizentale linie innerhalb der box liegt etwa bei 85.</p>
+<p>diese gibt den zenralen wert der daten an,</p>
+<p>d.h die hälfte der daten liegt darüber und die andere hälfte darunter</p>
+<p>der unter whisker zeigt eine größere ausdehnung im vergleich zum oberen whisker</p>
+<p>die verteilung der daten scheint relativ symmetrisch zu  sein</p>
+<h3 id="sec:quantile-comparison-plot-qualit-t">Quantile-Comparison Plot: Qualität</h3>
+<pre><code class="language-r">&gt; with(Dataset, qqPlot(Qualität, dist=&quot;norm&quot;, id=list(method=&quot;y&quot;, n=2, labels=rownames(Dataset))))
+</code></pre>
+<div class="figure">
+<img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-7" width="750" />
+<p class="caption">plot of chunk unnamed-chunk-7</p>
+</div>
+<pre><code>[1] 158  70
+</code></pre>
+<p>Dieses Q-Q-Plot zeigt, dass die Qualitätsdaten annähernd normalverteilt sind.</p>
+<p>Die meisten Punkte liegen auf der Normal-Linie, nur in den Randbereichen gibt es sehr geringe Abweichungen.</p>
+<p>Daher kann die Annahme der Normalverteilung akzeptiert werden</p>
+<pre><code class="language-r">&gt; Dataset$variable &lt;- with(Dataset, as.factor(paste(Dauer, Feuchte, Temperatur)))
+</code></pre>
+<p>in einer variable mit dem namen variable werden textstring miteinander kombiniert</p>
+<p>und alle in einer zeile nebeneinander dargestellt</p>
+<hr />
+<p>test auf NOrmalverteilung in Rstudio</p>
+<blockquote>
+<p>with(dataset,normalitytest(Qualität~variable)
+shapiro-wilk normaliry test</p>
+</blockquote>
+<p>p-values adjusted by the Holm method:</p>
+<pre><code>           unadjusted adjusted
+</code></pre>
+<p>Hoch Hoch Hoch 0.4450112  1.00000</p>
+<p>Hoch Hoch Tief 0.7806850  1.00000</p>
+<p>Hoch Tief Hoch 0.5766131  1.00000</p>
+<p>Hoch Tief Tief 0.3308878  1.00000</p>
+<p>Tief Hoch Hoch 0.9968961  1.00000</p>
+<p>Tief Hoch Tief 0.9156338  1.00000</p>
+<p>Tief Tief Hoch 0.0042637  0.03411</p>
+<p>Tief Tief Tief 0.9468820  1.00000</p>
+<p>data: Qualität</p>
+<p>Tief Tief Hoch 0.0042637  0.03411
+𝑝 &lt; 𝛼 = 0,05</p>
+<p>dieser datenwert ist einausreißer , der zur nicht normalverteilung führt
+wir ändern ihn auf 72.53 und führen die schritte erneut durch</p>
+<p>in den übringen fällen liegen jedoch
+entsprechend dem p-wert, alle in den bedingungen der normalverteilung vor</p>
+<hr />
+<p>DER GRUND FÜR DIE WIEDERHOLUNG DIESE TEIL</p>
+<p>eine systemfall bei alfa treining und der fehlende zugang zum pc-remot</p>
+<pre><code class="language-r">Dataset &lt;- readXL(&quot;C:/Users/alfa/Desktop/project/Daten_KW34.xlsx&quot;, 
+  rownames=FALSE, header=TRUE, na=&quot;&quot;, sheet=&quot;4_Prozessvereinfachung&quot;, 
+  stringsAsFactors=TRUE)
+</code></pre>
+<pre><code class="language-r">Dataset$variable &lt;- with(Dataset, as.factor(paste(Dauer, Feuchte, 
+  Temperatur)))
+</code></pre>
+<hr />
+<p><code> </code></p>
+<pre><code class="language-r">Dataset1 &lt;- readXL(&quot;C:/Users/alfa/Desktop/project/Daten_KW34.xlsx&quot;, rownames=FALSE, header=TRUE, na=&quot;&quot;, sheet=&quot;4_Prozessvereinfachung&quot;, 
+  stringsAsFactors=TRUE)
+</code></pre>
+<p><code> </code></p>
+<pre><code class="language-r">Dataset1$variable &lt;- with(Dataset1, as.factor(paste(Dauer, Feuchte, Temperatur)))
+</code></pre>
+<p>p-values adjusted by the Holm method:</p>
+<pre><code>           unadjusted adjusted
+</code></pre>
+<p>Hoch Hoch Hoch 0.44501    1</p>
+<p>Hoch Hoch Tief 0.78069    1</p>
+<p>Hoch Tief Hoch 0.57661    1</p>
+<p>Hoch Tief Tief 0.33089    1</p>
+<p>Tief Hoch Hoch 0.99690    1</p>
+<p>Tief Hoch Tief 0.91563    1</p>
+<p>Tief Tief Hoch 0.25737    1</p>
+<p>Tief Tief Tief 0.94688    1</p>
+<p>jetz folgen alle kombinationen der normalverteilung</p>
+<h3 id="sec:bartlett-s-test-qualit-t-dauerfeuchtetemperatur">Bartlett’s Test: Qualität ~ Dauer<em>Feuchte</em>Temperatur</h3>
+<pre><code class="language-r">Tapply(Qualität ~ Dauer + Feuchte + Temperatur, var, na.action=na.omit, data=Dataset1) # variances
+</code></pre>
+<pre><code>## , , Temperatur = Hoch
+## 
+##       Feuchte
+## Dauer      Hoch     Tief
+##   Hoch 30.54462 33.32541
+##   Tief 32.46626 37.20063
+## 
+## , , Temperatur = Tief
+## 
+##       Feuchte
+## Dauer      Hoch     Tief
+##   Hoch 14.29161 30.00101
+##   Tief 14.28186 24.80374
+</code></pre>
+<pre><code class="language-r">bartlett.test(Qualität ~ interaction(Dauer, Feuchte, Temperatur), data=Dataset1)
+</code></pre>
+<pre><code>## 
+## 	Bartlett test of homogeneity of variances
+## 
+## data:  Qualität by interaction(Dauer, Feuchte, Temperatur)
+## Bartlett's K-squared = 12.815, df = 7, p-value = 0.07676
+</code></pre>
+<p>p-wert:  0.1419
+p-wert &gt;0.05
+Verbleib bei H0 ,
+deshalb sind diese kombination auch hinsichtlich der varianz ähnlich
+hier haben wir Varianzhomogenität</p>
+<hr />
+<p>unter berücksichtigung der folgenden</p>
+<p>Intervallskalierung</p>
+<p>Unabhängigkeit</p>
+<p>Normalverteilung</p>
+<p>Varianzhomogenität</p>
+<h2 id="sec:bedingungen-sind-alle-notwendigen-voraussetzungenf-r-die-anova-erf-llt">bedingungen sind alle notwendigen voraussetzungenfür die ANOVA erfüllt</h2>
+<h3 id="sec:lineares-regressionsmodell-anovamodel-1-qualit-t-dauerfeuchtetemperatur">Lineares Regressionsmodell: AnovaModel.1: Qualität ~ Dauer<em>Feuchte</em>Temperatur</h3>
+<pre><code class="language-r">AnovaModel.1 &lt;- lm(Qualität ~ Dauer*Feuchte*Temperatur, data=Dataset1, contrasts=list(Dauer =&quot;contr.Sum&quot;, Feuchte =&quot;contr.Sum&quot;, Temperatur 
+  =&quot;contr.Sum&quot;))
+Anova(AnovaModel.1)
+</code></pre>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: Qualität
+##                          Sum Sq  Df  F value    Pr(&gt;F)    
+## Dauer                       7.3   1   0.2679    0.6053    
+## Feuchte                  5335.8   1 196.7876 &lt; 2.2e-16 ***
+## Temperatur                  4.0   1   0.1489    0.6999    
+## Dauer:Feuchte              10.6   1   0.3917    0.5320    
+## Dauer:Temperatur           29.3   1   1.0789    0.3000    
+## Feuchte:Temperatur       1593.3   1  58.7605 4.846e-13 ***
+## Dauer:Feuchte:Temperatur   15.4   1   0.5675    0.4520    
+## Residuals                6290.5 232                       
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+<pre><code class="language-r">Tapply(Qualität ~ Dauer + Feuchte + Temperatur, mean, na.action=na.omit, data=Dataset1) # means
+</code></pre>
+<pre><code>## , , Temperatur = Hoch
+## 
+##       Feuchte
+## Dauer      Hoch     Tief
+##   Hoch 80.59967 85.80400
+##   Tief 80.48067 83.83067
+## 
+## , , Temperatur = Tief
+## 
+##       Feuchte
+## Dauer      Hoch   Tief
+##   Hoch 74.99533 89.493
+##   Tief 75.26000 89.929
+</code></pre>
+<pre><code class="language-r">Tapply(Qualität ~ Dauer + Feuchte + Temperatur, sd, na.action=na.omit, data=Dataset1) # std. deviations
+</code></pre>
+<pre><code>## , , Temperatur = Hoch
+## 
+##       Feuchte
+## Dauer      Hoch     Tief
+##   Hoch 5.526718 5.772817
+##   Tief 5.697917 6.099232
+## 
+## , , Temperatur = Tief
+## 
+##       Feuchte
+## Dauer      Hoch     Tief
+##   Hoch 3.780424 5.477318
+##   Tief 3.779135 4.980335
+</code></pre>
+<pre><code class="language-r">xtabs(~ Dauer + Feuchte + Temperatur, data=Dataset1) # counts
+</code></pre>
+<pre><code>## , , Temperatur = Hoch
+## 
+##       Feuchte
+## Dauer  Hoch Tief
+##   Hoch   30   30
+##   Tief   30   30
+## 
+## , , Temperatur = Tief
+## 
+##       Feuchte
+## Dauer  Hoch Tief
+##   Hoch   30   30
+##   Tief   30   30
+</code></pre>
+<p>———–////////</p>
+<p>signifikante faktoren :</p>
+<p>freucht und freucht + temperatur</p>
+<p>nicht signifikante faktoren :</p>
+<p>dauer</p>
+<p>temperatur</p>
+<p>dauer + temperatur + freucht</p>
+<hr />
+<p>Hat die Dauer einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<p>nein,es hat nicht signifikante faktoren</p>
+<hr />
+<p>Hat die Feuchte einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<p>ja ,es hat signifikante faktoren</p>
+<hr />
+<p>Hat die temperatur einen Einfluss auf die Qualität? (Haupteffekt)</p>
+<p>nein ,es hat nicht signifikante faktoren</p>
+<hr />
+<hr />
+<p>Hat die Dauer und Feuchte einen Einfluss auf die Qualität?</p>
+<p>die dauer und die freucht wirken unabhängig voneinander</p>
+<p>länger dauer verstärk oder schwächt den effekt der freucht nicht</p>
+<hr />
+<p>Hat die Dauer und temperatur einen Einfluss auf die Qualität?</p>
+<p>die dauer und die temperatur wirken unabhängig voneinander</p>
+<p>länger dauer verstärk oder schwächt den effekt der freucht nicht</p>
+<hr />
+<p>Hat die Feuchte einen temperatur auf die Qualität?</p>
+<p>ja, es hat signifikante faktoren</p>
+<hr />
+<hr />
+<p>Haben Dauer und Feuchte und temperatur im Zusammenspiel einen
+Einfluss auf die Qualität? (Wechselwirkungseffekt)</p>
+<p>die analyse zeigt ,
+dass die hypothese</p>
+<p>viel hilft viel</p>
+<p>nur für freucht und die wechselwirkung zwichen freucht und temperetur zutrifft</p>
+<p>für die klebedauer ist diese annahme völlig falsch</p>
+<p>das unternehmen kann den prozess vereinfachen ,indem es die kürzeste klebezeit (und damit gerigste kosten)
+verwendet,
+ohne die Qualität zu beeinträchtigen</p>
+<p>prozessoptimierung : fokus auf feuchtigkeitskontrolle und intelligentes managment der freucht temperatur</p>
+<p>wechselwikung während die klebedauer eliminiert werden kann</p>
+</div>
+</body>
+</html>
